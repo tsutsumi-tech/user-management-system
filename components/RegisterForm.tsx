@@ -24,7 +24,6 @@ const RegisterForm: React.FC<RegisterFormProps> = ({
   onError,
   disabled = false,
 }) => {
- 
   const {
     register,
     handleSubmit,
