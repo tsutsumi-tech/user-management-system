@@ -60,27 +60,37 @@ const EditUserForm: React.FC<EditUserFormProps> = ({
     };
     getUser();
   }, [userId, setValue]);
+  const onSubmit: SubmitHandler<EditUserFormInputs> = async (data) => {
+    try {
+      await updateUser(userId, data);
+      if (onSuccess) onSuccess();
+    } catch (err) {
+      if (onError) onError(err);
+    }
+  };
   return (
     <Box sx={{ maxWidth: 400, mx: "auto", mt: 4 }}>
       <Typography variant="h5" gutterBottom>
         ユーザー情報編集
       </Typography>
-      <TextField
-        label="名前"
-        {...register("name", { required: "名前は必須です。" })}
-      />
-      <TextField
-        label="メール"
-        type="email"
-        {...register("email", {
-          required: "メールは必須です。",
-        })}
-      />
-      <TextField
-        label="役職"
-        {...register("role", { required: "ロール設定は必須です。" })}
-      />
-      <Button type="submit">登録</Button>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <TextField
+          label="名前"
+          {...register("name", { required: "名前は必須です。" })}
+        />
+        <TextField
+          label="メール"
+          type="email"
+          {...register("email", {
+            required: "メールは必須です。",
+          })}
+        />
+        <TextField
+          label="役職"
+          {...register("role", { required: "ロール設定は必須です。" })}
+        />
+        <Button type="submit">更新</Button>
+      </form>
     </Box>
   );
 };
