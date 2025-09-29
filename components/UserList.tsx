@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import UserCard from "./UserCard";
 import { User } from "@/types/User";
 import { softDeleteUser } from "@/utils/api";
+import CustomCard from "./parts/CustomCard";
 
 interface UserListProps {
   users: User[];
@@ -28,7 +29,7 @@ const UserList: React.FC<UserListProps> = ({ users }) => {
   return (
     <div>
       {filterUsers.map((user) => (
-        <UserCard key={user.id} user={user} onDelete={handleDelete} />
+        <CustomCard key={user.id} title={user.name} description={`メール: ${user.email} / 役割: ${user.role}`}/>
       ))}
     </div>
   );
