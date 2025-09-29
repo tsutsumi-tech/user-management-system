@@ -1,3 +1,5 @@
+// components/Navbar.tsx
+
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
 import Link from "next/link";
 import React from "react";
@@ -14,6 +16,9 @@ const Navbar: React.FC = () => {
         </Button>
         <Button color="inherit" component={Link} href="/users">
           ユーザー一覧
+        </Button>
+        <Button color="inherit" component={Link} href="/register">
+          ユーザー新規登録
         </Button>
       </Toolbar>
     </AppBar>
