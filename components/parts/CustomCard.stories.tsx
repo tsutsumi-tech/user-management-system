@@ -1,11 +1,22 @@
 // components/parts/CustomCard.stories.tsx
 
-import type { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
+import CustomButton from "./CustomButton";
 import CustomCard from "./CustomCard";
-import CustomButton from "../../components/parts/CustomButton";
+
 
 // TODO: メタデータ
+
+const meta: Meta<typeof CustomCard> = {
+  title: "Components/parts/CustomCard",
+  component: CustomCard,
+};
+
+export default meta;
+
 // TODO: ストーリーの定義
+type Story = StoryObj<typeof CustomCard>;
+
 
 export const Default: Story = {
   args: {
