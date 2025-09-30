@@ -4,19 +4,18 @@ import { Meta, StoryObj } from "@storybook/react";
 import CustomButton from "./CustomButton";
 import CustomCard from "./CustomCard";
 
-
 // TODO: メタデータ
 
 const meta: Meta<typeof CustomCard> = {
   title: "Components/parts/CustomCard",
   component: CustomCard,
+  tags: ["autodocs"],
 };
 
 export default meta;
 
 // TODO: ストーリーの定義
 type Story = StoryObj<typeof CustomCard>;
-
 
 export const Default: Story = {
   args: {
