@@ -53,7 +53,10 @@ const UserList: React.FC<UserListProps> = ({ users }) => {
                 >
                   編集
                 </Button>
-                <CustomButton onClick={() => setOpen(true)} variantType="danger">
+                <CustomButton
+                  onClick={() => setOpen(true)}
+                  variantType="danger"
+                >
                   削除
                 </CustomButton>
               </CardActions>
